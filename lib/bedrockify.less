@@ -140,21 +140,18 @@
   @hover: "ore-buttons-@{color}-hover";
   @pressed: "ore-buttons-@{color}-pressed";
   @pressed-hover: "ore-buttons-@{color}-pressed-hover";
-
   .ore-texture(@@default);
   box-sizing: border-box;
   color: if((@color = white), @ore-ink, @ore-text);
   font: inherit;
   padding: 4px 12px 8px;
   cursor: pointer;
-
   &:hover {
     border-image-source: @@hover;
   }
 
   &:active {
     border-image-source: @@pressed;
-    padding-block: 6px;
   }
 
   &:active:hover {
@@ -170,7 +167,8 @@
   &[aria-disabled="true"] {
     border-image-source: @ore-buttons-white-locked;
     color: #626366;
-    padding-block: 4px 8px;
+    filter: none;
+    transition: none;
     cursor: default;
   }
 }

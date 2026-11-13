@@ -19,9 +19,9 @@ button {
 `.ore-button(@color: white)` accepts `white`, `green`, or `dark`. White uses dark
 text; green and dark use white text. It inherits the element's font.
 
-Hover, pressed, pressed while hovering, and keyboard focus are included. Disabled
-buttons use the locked white texture for all three colors. The pressed state
-changes padding without changing the total vertical padding.
+Hover and pressed states use their matching Ore UI textures. The pressed state
+keeps the button the same size. Keyboard focus has a visible outline. Disabled
+buttons use the locked white texture for all three colors.
 
 Both `:disabled` and `[aria-disabled="true"]` get the disabled appearance.
 `aria-disabled` only changes how the element looks here; the site still needs to

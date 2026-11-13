@@ -1,0 +1,67 @@
+/* ==UserStyle==
+@name         Bedrockify for Google Search
+@namespace    github.com/jvr2022/bedrockify
+@version      0.1.0
+@description  Minecraft Bedrock Ore UI for Google Search.
+@author       jvr2022
+@preprocessor less
+==/UserStyle== */
+
+@import "https://raw.githubusercontent.com/jvr2022/bedrockify/19272a9b0340f4e8bc2806df93011c8a42bf63b5/lib/bedrockify.less";
+
+@-moz-document domain("google.com") {
+  .ore-fonts();
+
+  body,
+  input,
+  button {
+    color: @ore-text;
+    font-family: "Mojangles", sans-serif;
+  }
+
+  body {
+    background: @ore-page;
+  }
+
+  .T14B5e input[type="submit"],
+  .gbqfba {
+    .ore-button();
+    min-width: 54px;
+    height: 36px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    background-color: #303134;
+    color: #e8eaed;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    user-select: none;
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      border-image-source: @ore-buttons-white-hover;
+    }
+
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      border-image-source: @ore-buttons-white-pressed;
+      padding: 0 16px;
+    }
+
+    &:active:hover:not(:disabled):not([aria-disabled="true"]) {
+      border-image-source: @ore-buttons-white-pressed-hover;
+    }
+
+    &:focus-visible {
+      outline: 2px solid @ore-text;
+      outline-offset: 2px;
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  .A8SBwf {
+    --client-adapter-margin-base: 150px;
+  }
+}
