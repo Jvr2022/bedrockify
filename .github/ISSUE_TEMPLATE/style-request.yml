@@ -1,0 +1,15 @@
+name: Request a site
+description: Suggest a site for Bedrockify.
+body:
+  - type: input
+    id: site
+    attributes:
+      label: Site URL
+    validations:
+      required: true
+  - type: textarea
+    id: pages
+    attributes:
+      label: Which pages and controls matter most?
+    validations:
+      required: true

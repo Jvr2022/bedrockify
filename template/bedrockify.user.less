@@ -1,0 +1,24 @@
+/* ==UserStyle==
+@name         Bedrockify for Example
+@namespace    github.com/jvr2022/bedrockify
+@version      0.1.0
+@description  Ore UI for Example.
+@author       jvr2022
+@preprocessor default
+==/UserStyle== */
+
+@import "../lib/ore-ui.less";
+
+@-moz-document domain("example.com") {
+  .ore-fonts();
+
+  body {
+    color: @ore-text;
+    background: @ore-page;
+    font-family: "Mojangles", sans-serif;
+  }
+
+  button {
+    .ore-button();
+  }
+}

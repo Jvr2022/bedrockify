@@ -1,0 +1,198 @@
+@import "assets.less";
+@import "fonts.less";
+
+@ore-page: #1e1e1f;
+@ore-panel: #313233;
+@ore-raised: #48494a;
+@ore-green: #3c8527;
+@ore-green-light: #639d52;
+@ore-text: #fff;
+@ore-ink: #1e1e1f;
+
+.ore-texture(@image; @slice: 6; @width: 10px) {
+  background-color: transparent;
+  border: @width solid transparent;
+  border-image: @image @slice fill / @width;
+  border-radius: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+.ore-button(@color: white) {
+  @default: "ore-buttons-@{color}-default";
+  @hover: "ore-buttons-@{color}-hover";
+  @pressed: "ore-buttons-@{color}-pressed";
+  @pressed-hover: "ore-buttons-@{color}-pressed-hover";
+
+  .ore-texture(@@default);
+  box-sizing: border-box;
+  color: if((@color = white), @ore-ink, @ore-text);
+  font: inherit;
+  padding: 4px 12px 8px;
+  cursor: pointer;
+
+  &:hover {
+    border-image-source: @@hover;
+  }
+
+  &:active {
+    border-image-source: @@pressed;
+    padding-block: 6px;
+  }
+
+  &:active:hover {
+    border-image-source: @@pressed-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid @ore-text;
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    border-image-source: @ore-buttons-white-locked;
+    color: #626366;
+    padding-block: 4px 8px;
+    cursor: default;
+  }
+}
+
+.ore-panel() {
+  .ore-texture(@ore-panels-background; 2; 8px);
+  color: @ore-text;
+}
+
+.ore-panel-header() {
+  .ore-texture(@ore-panels-background-header; 2; 8px);
+  color: @ore-text;
+}
+
+.ore-input() {
+  .ore-texture(@ore-inputs-inset; 4; 8px);
+  color: @ore-text;
+  font: inherit;
+  padding: 8px;
+
+  &:hover {
+    border-image-source: @ore-inputs-inset-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid @ore-text;
+    outline-offset: 2px;
+  }
+}
+
+.ore-checkbox() {
+  .ore-texture(@ore-checkboxes-default);
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+
+  &:hover {
+    border-image-source: @ore-checkboxes-hover;
+  }
+
+  &:checked {
+    border-image-source: @ore-checkboxes-pressed;
+  }
+
+  &:checked:hover {
+    border-image-source: @ore-checkboxes-pressed-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid @ore-text;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.ore-radio() {
+  .ore-texture(@ore-radios-off; 2; 4px);
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+
+  &:hover {
+    border-image-source: @ore-radios-off-hover;
+  }
+
+  &:checked {
+    border-image-source: @ore-radios-on;
+  }
+
+  &:checked:hover {
+    border-image-source: @ore-radios-on-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid @ore-text;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.ore-scrollbar() {
+  scrollbar-color: #d0d1d4 #313233;
+  scrollbar-width: auto;
+
+  &::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @ore-panel;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    .ore-texture(@ore-scrollbars-handle; 2; 5px);
+  }
+}
+
+.ore-dropdown() {
+  .ore-texture(@ore-dropdowns-background; 2; 3px);
+  color: @ore-text;
+}
+
+.ore-toggle() {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  width: 48px;
+  height: 24px;
+  background: @ore-toggles-off center / 100% 100% no-repeat;
+  image-rendering: pixelated;
+  vertical-align: middle;
+
+  &:hover {
+    background-image: @ore-toggles-off-hover;
+  }
+
+  &:checked {
+    background-image: @ore-toggles-on;
+  }
+
+  &:checked:hover {
+    background-image: @ore-toggles-on-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid @ore-text;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

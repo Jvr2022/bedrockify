@@ -1,0 +1,29 @@
+{
+  "name": "bedrockify",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minecraft Bedrock Ore UI userstyles",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "prettier --check . && node scripts/assets.mjs --check && npm run build && node scripts/check-styles.mjs",
+    "format": "prettier --write .",
+    "build": "node scripts/build.mjs",
+    "assets": "node scripts/assets.mjs"
+  },
+  "devDependencies": {
+    "less": "^4.9.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvr2022/bedrockify.git"
+  },
+  "homepage": "https://github.com/jvr2022/bedrockify",
+  "bugs": {
+    "url": "https://github.com/jvr2022/bedrockify/issues"
+  }
+}

@@ -1,0 +1,66 @@
+/* ==UserStyle==
+@name         Bedrockify component example
+@namespace    github.com/jvr2022/bedrockify
+@version      0.1.0
+@description  Buttons, panels, and form controls on example.com.
+@author       jvr2022
+@preprocessor default
+==/UserStyle== */
+
+@import "../../lib/ore-ui.less";
+
+@-moz-document domain("example.com") {
+  .ore-fonts();
+
+  body {
+    background: @ore-page;
+    color: @ore-text;
+    font-family: "Mojangles", sans-serif;
+  }
+
+  h1,
+  h2 {
+    font-family: "Minecraft Ten", sans-serif;
+  }
+
+  button {
+    .ore-button();
+  }
+
+  button[type="submit"] {
+    .ore-button(green);
+  }
+
+  button.secondary {
+    .ore-button(dark);
+  }
+
+  section {
+    .ore-panel();
+  }
+
+  input[type="text"],
+  textarea {
+    .ore-input();
+  }
+
+  input[type="checkbox"] {
+    .ore-checkbox();
+  }
+
+  input[type="radio"] {
+    .ore-radio();
+  }
+
+  input[role="switch"] {
+    .ore-toggle();
+  }
+
+  .menu {
+    .ore-dropdown();
+  }
+
+  html {
+    .ore-scrollbar();
+  }
+}

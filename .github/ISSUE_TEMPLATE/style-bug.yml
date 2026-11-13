@@ -1,0 +1,22 @@
+name: Broken style
+description: Report a page or control that needs fixing.
+body:
+  - type: input
+    id: site
+    attributes:
+      label: Site and page URL
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Browser, style version, and related extensions
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What broke?
+      description: Include steps and a screenshot if possible.
+    validations:
+      required: true
